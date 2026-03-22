@@ -194,10 +194,10 @@ export default function LibraryPage() {
       )}
 
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5">
         {items.map((item) => (
-          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group">
-            <div className="aspect-video w-full bg-zinc-100 relative overflow-hidden">
+          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group flex flex-col aspect-[3/4]">
+            <div className="h-[60%] w-full bg-zinc-100 relative overflow-hidden shrink-0 border-b border-zinc-100">
               {item.imageUrl ? (
                 <img src={item.imageUrl} alt={item.imageName} className="w-full h-full object-cover" />
               ) : (
@@ -205,40 +205,44 @@ export default function LibraryPage() {
                   <ImageIcon className="w-10 h-10" />
                 </div>
               )}
-              <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg font-bold text-lg shadow-sm text-indigo-600">
+              <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg font-bold text-sm md:text-base shadow-sm text-indigo-600">
                 {item.number}
               </div>
-              {/* Edit/Delete buttons — luôn hiện trên mobile (không dùng hover) */}
-              <div className="absolute top-2 right-2 flex gap-1.5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+              {/* Edit/Delete buttons */}
+              <div className="absolute top-2 right-2 flex gap-1opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                 <button 
                   onClick={() => setEditingItem(item)}
-                  className="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600 shadow-sm min-h-[2.75rem] min-w-[2.75rem] flex items-center justify-center"
+                  className="bg-indigo-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-indigo-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.75rem] md:min-w-[2.75rem] flex items-center justify-center"
                   title="Sửa"
                 >
-                  <Pencil className="w-4 h-4" />
+                  <Pencil className="w-3.5 h-3.5 md:w-4 md:h-4" />
                 </button>
                 <button 
                   onClick={() => deleteItem(item.id)}
-                  className="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 shadow-sm min-h-[2.75rem] min-w-[2.75rem] flex items-center justify-center"
+                  className="bg-red-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-red-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.75rem] md:min-w-[2.75rem] flex items-center justify-center"
                   title="Xóa"
                 >
-                  <Trash2 className="w-4 h-4" />
+                  <Trash2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
                 </button>
               </div>
             </div>
-            <div className="p-3 md:p-5">
-              <h3 className="font-bold text-base md:text-lg text-zinc-900 leading-tight">{item.imageName}</h3>
-              <p className="text-emerald-600 mt-1 flex items-center gap-2 text-sm font-medium">
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
-                {item.action}
-              </p>
-              <p className="text-amber-600 mt-1 flex items-center gap-2 text-sm font-medium">
-                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
-                {item.object}
-              </p>
-              {item.reason && (
-                <p className="text-zinc-400 mt-1.5 text-xs italic leading-snug">&ldquo;{item.reason}&rdquo;</p>
-              )}
+            <div className="h-[40%] p-3 md:p-4 flex flex-col justify-start items-start text-left overflow-y-auto">
+              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1 sm:mb-2">{item.imageName}</h3>
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full text-xs sm:text-sm">
+                <p className="text-emerald-700 font-medium flex gap-1.5">
+                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] sm:text-xs mt-0.5">HĐ:</span>
+                  <span>{item.action}</span>
+                </p>
+                <p className="text-amber-700 font-medium flex gap-1.5">
+                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] sm:text-xs mt-0.5">VT:</span>
+                  <span>{item.object}</span>
+                </p>
+                {item.reason && (
+                  <p className="text-zinc-500 italic mt-0.5 md:mt-1 border-l-2 border-zinc-200 pl-2 py-0.5 text-[11px] sm:text-xs leading-snug">
+                    &ldquo;{item.reason}&rdquo;
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         ))}
