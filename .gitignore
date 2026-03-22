@@ -5,3 +5,18 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Build artifacts
+out/
+tsconfig.tsbuildinfo
+
+# Temp files
+pao_data.json
+
+# Real images (add manually, not in repo)
+public/images/*.jpg
+public/images/*.png
+public/images/*.webp
+
+# PAO source docs (not needed in web build)
+PAO_*.md

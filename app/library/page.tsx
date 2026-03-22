@@ -17,6 +17,8 @@ export default function LibraryPage() {
     number: '',
     imageName: '',
     action: '',
+    object: '',
+    reason: '',
     imageUrl: ''
   });
 
@@ -37,10 +39,12 @@ export default function LibraryPage() {
         number: formData.number.padStart(2, '0'),
         imageName: formData.imageName,
         action: formData.action,
+        object: formData.object,
+        reason: formData.reason,
         imageUrl: formData.imageUrl || `/images/${formData.number.padStart(2, '0')}.jpg`
       });
       
-      setFormData({ number: '', imageName: '', action: '', imageUrl: '' });
+      setFormData({ number: '', imageName: '', action: '', object: '', reason: '', imageUrl: '' });
       setIsAdding(false);
     } catch (err: any) {
       setError(err.message);
@@ -152,6 +156,26 @@ export default function LibraryPage() {
               />
             </div>
             <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">Vật thể</label>
+              <input
+                type="text"
+                value={formData.object}
+                onChange={(e) => setFormData({...formData, object: e.target.value})}
+                className="w-full px-3 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-base"
+                placeholder="VD: Cây gậy"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">Lý do khớp hình</label>
+              <input
+                type="text"
+                value={formData.reason}
+                onChange={(e) => setFormData({...formData, reason: e.target.value})}
+                className="w-full px-3 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-base"
+                placeholder="VD: Gậy giống số 1"
+              />
+            </div>
+            <div>
               <label className="block text-sm font-medium text-zinc-700 mb-1">Đường dẫn Ảnh</label>
               <input
                 type="text"
@@ -204,9 +228,13 @@ export default function LibraryPage() {
             </div>
             <div className="p-3 md:p-5">
               <h3 className="font-bold text-base md:text-lg text-zinc-900 leading-tight">{item.imageName}</h3>
-              <p className="text-zinc-500 mt-1 flex items-center gap-2 text-sm">
+              <p className="text-emerald-600 mt-1 flex items-center gap-2 text-sm font-medium">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                 {item.action}
+              </p>
+              <p className="text-amber-600 mt-1 flex items-center gap-2 text-sm font-medium">
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
+                {item.object}
               </p>
             </div>
           </div>
@@ -259,6 +287,24 @@ export default function LibraryPage() {
                     type="text"
                     value={editingItem.action}
                     onChange={(e) => setEditingItem({...editingItem, action: e.target.value})}
+                    className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-base"
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label className="block text-sm font-medium text-zinc-700 mb-1">Vật thể</label>
+                  <input
+                    type="text"
+                    value={editingItem.object}
+                    onChange={(e) => setEditingItem({...editingItem, object: e.target.value})}
+                    className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-base"
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label className="block text-sm font-medium text-zinc-700 mb-1">Lý do khớp hình</label>
+                  <input
+                    type="text"
+                    value={editingItem.reason}
+                    onChange={(e) => setEditingItem({...editingItem, reason: e.target.value})}
                     className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-base"
                   />
                 </div>

@@ -5,7 +5,7 @@ export default function PAOGuide() {
 
       {/* ===== HEADER ===== */}
       <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-2xl p-6 md:p-8">
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-2">Hệ Thống PAO — 100 Hình Ảnh (00–99)</h1>
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-2">Hệ Thống PAO — 10 Hình Ảnh (00–09)</h1>
         <p className="text-indigo-100 text-sm md:text-base leading-relaxed">
           Ghi nhớ dãy số dài bằng cách chuyển mỗi cặp số thành một cảnh hành động sống động gồm{' '}
           <strong className="text-white">Người — Hành động — Vật thể</strong>.
@@ -92,7 +92,7 @@ export default function PAOGuide() {
       </Section>
 
       {/* ===== PHẦN 4: BẢNG 100 HÌNH ẢNH ===== */}
-      <Section title="Phần 4 — Bảng 100 Hình Ảnh Mẫu" subtitle="00–99 (chỉ là gợi ý tham khảo)" color="amber">
+      <Section title="Phần 4 — Bảng 10 Hình Ảnh Mẫu" subtitle="00–09 (chỉ là gợi ý tham khảo)" color="amber">
         <Tip type="warning">Bảng dưới là <strong>gợi ý tham khảo</strong>. Bạn nên <strong>thay thế</strong> bằng nhân vật quen thuộc với văn hóa Việt Nam / sở thích cá nhân. Hình ảnh do chính bạn tạo ra sẽ nhớ lâu hơn gấp 3–5 lần.</Tip>
         
         {[
@@ -108,114 +108,7 @@ export default function PAOGuide() {
             ['08','⭕🕶','Điệp viên','Nhìn qua ống nhòm','Kính mắt tròn'],
             ['09','⭕🎈','Trẻ em','Thả bóng','Dây thừng'],
           ]},
-          { label: '10–19', emoji: '🕯', theme: 'Gậy + ...', rows: [
-            ['10','🕯⭕','Ảo thuật gia','Vẽ vòng tròn','Cây gậy phép'],
-            ['11','🕯🕯','Trống quân','Đánh trống','Hai dùi trống'],
-            ['12','🕯🦢','Vũ công ballet','Kéo căng chân','Thanh ballet ngang'],
-            ['13','🕯👂','Nhạc sĩ violin','Kéo vĩ cầm','Cây đàn violin'],
-            ['14','🕯⛵','Chiến binh','Cắm giáo','Ngọn giáo dài'],
-            ['15','🕯🪝','Thuyền trưởng','Móc dây','Mỏ neo'],
-            ['16','🕯🐌','Phù thủy','Khuấy nồi','Cây gậy nút tròn'],
-            ['17','🕯⚡','Kiếm sĩ','Chém ngang','Thanh kiếm'],
-            ['18','🕯🕶','Giáo sư','Viết bảng','Kính lúp'],
-            ['19','🕯🎈','Người bán rong','Cầm que','Bó bóng bay'],
-          ]},
-          { label: '20–29', emoji: '🦢', theme: 'Thiên nga + ...', rows: [
-            ['20','🦢⭕','VĐV bơi lội','Bơi sải','Quả phao tròn'],
-            ['21','🦢🕯','Người mẫu','Đi catwalk','Micro cầm tay'],
-            ['22','🦢🦢','Cặp đôi','Khiêu vũ','Hai chiếc nhẫn'],
-            ['23','🦢👂','Ca sĩ','Hát opera','Micro đặt bàn'],
-            ['24','🦢⛵','Thủy thủ','Kéo buồm','Con thuyền giấy'],
-            ['25','🦢🪝','Thám tử','Lục soát','Kính lúp móc'],
-            ['26','🦢🐌','Phù thủy nữ','Bay trên chổi','Nồi phép thuật'],
-            ['27','🦢⚡','Ninja nữ','Trượt nhanh','Shuriken'],
-            ['28','🦢🕶','Điệp viên nữ','Chụp ảnh bí mật','Máy ảnh nhỏ'],
-            ['29','🦢🎈','Trẻ em gái','Nhảy lên','Khinh khí cầu'],
-          ]},
-          { label: '30–39', emoji: '👂', theme: 'Sóng đôi + ...', rows: [
-            ['30','👂⭕','Nhạc sĩ','Đánh guitar','Loa tròn'],
-            ['31','👂🕯','Nhà thơ','Đọc thơ','Cuộn giấy'],
-            ['32','👂🦢','Nhiếp ảnh gia','Chụp thiên nhiên','Ống kính dài'],
-            ['33','👂👂','Kỹ sư âm thanh','Điều chỉnh âm thanh','Bộ headphone studio'],
-            ['34','👂⛵','Người lướt sóng','Cưỡi sóng','Ván lướt'],
-            ['35','👂🪝','Thợ câu','Quăng lưới','Cần câu cong'],
-            ['36','👂🐌','Nhà khoa học','Quan sát kính hiển vi','Ống nghiệm'],
-            ['37','👂⚡','VĐV karate','Chặt tay','Tấm gạch'],
-            ['38','👂🕶','Nhà tiên tri','Xem pha lê','Quả cầu thủy tinh'],
-            ['39','👂🎈','Nhà thám hiểm','Thổi phồng','Phao bơi'],
-          ]},
-          { label: '40–49', emoji: '⛵', theme: 'Cờ / Góc vuông + ...', rows: [
-            ['40','⛵⭕','Thuyền trưởng','Quay bánh lái','Bánh lái tàu'],
-            ['41','⛵🕯','Người cắm trại','Dựng lều','Cọc lều'],
-            ['42','⛵🦢','Tay đua','Về đích','Cờ ca rô'],
-            ['43','⛵👂','Nhà hàng hải','Phát tín hiệu','Cờ hiệu'],
-            ['44','⛵⛵','Trọng tài','Phất cờ','Hai cờ đỏ vàng'],
-            ['45','⛵🪝','Lính cứu hỏa','Leo thang','Móc leo tường'],
-            ['46','⛵🐌','VĐV marathon','Chạy tới đích','Dải ruy băng đích'],
-            ['47','⛵⚡','Chiến binh Viking','Chặt cờ','Rìu chiến'],
-            ['48','⛵🕶','Quan tòa','Gõ búa','Búa xử án'],
-            ['49','⛵🎈','Trẻ em','Vẫy cờ','Bóng bay màu sắc'],
-          ]},
-          { label: '50–59', emoji: '🪝', theme: 'Móc / Lưỡi câu + ...', rows: [
-            ['50','🪝⭕','Ngư dân','Kéo lưới','Xô cá tròn'],
-            ['51','🪝🕯','Người chăn cừu','Chống gậy','Gậy cong đầu'],
-            ['52','🪝🦢','Vũ công hiphop','Giật tay','Dây micro'],
-            ['53','🪝👂','Thợ sửa ống nước','Thông cống','Cần thông cống'],
-            ['54','🪝⛵','Thợ mỏ','Đào đất','Cuốc chim'],
-            ['55','🪝🪝','Bác sĩ phẫu thuật','Kẹp mổ','Hai kẹp phẫu thuật'],
-            ['56','🪝🐌','Thợ cơ khí','Vặn bu lông','Cờ lê cong'],
-            ['57','🪝⚡','Cướp biển','Móc kiếm','Móc tay cướp biển'],
-            ['58','🪝🕶','Bác sĩ nhãn khoa','Kiểm tra mắt','Gọng kính cong'],
-            ['59','🪝🎈','Người leo núi','Móc dây','Dây leo'],
-          ]},
-          { label: '60–69', emoji: '🐌', theme: 'Bụng tròn / Nòng nọc + ...', rows: [
-            ['60','🐌⭕','Đầu bếp béo','Lăn bột','Cái nồi tròn'],
-            ['61','🐌🕯','Ông già Noel','Vác túi quà','Cây gậy kẹo'],
-            ['62','🐌🦢','Nhà thiết kế','Vẽ cong','Bút lông cổ thiên nga'],
-            ['63','🐌👂','Nhạc sĩ kèn','Thổi kèn','Kèn saxophone'],
-            ['64','🐌⛵','Người cắm trại','Dựng cờ','Ba lô tròn'],
-            ['65','🐌🪝','Thợ câu béo','Ngồi câu','Phao câu tròn'],
-            ['66','🐌🐌','Nhà khoa học điên','Khuấy nồi','Hai ống nghiệm'],
-            ['67','🐌⚡','Đầu bếp','Thái thịt','Dao phay cong'],
-            ['68','🐌🕶','Thám tử béo','Dùng kính lúp','Kính lúp tròn to'],
-            ['69','🐌🎈','Trẻ béo','Ôm bóng','Bóng bay khổng lồ'],
-          ]},
-          { label: '70–79', emoji: '⚡', theme: 'Lưỡi dao / Boomerang + ...', rows: [
-            ['70','⚡⭕','VĐV golf','Đánh golf','Gậy golf + bóng'],
-            ['71','⚡🕯','Thợ chặt gỗ','Bổ củi','Rìu chặt'],
-            ['72','⚡🦢','Vũ công breakdance','Quét chân','Giày thể thao'],
-            ['73','⚡👂','Nhạc sĩ guitar điện','Đập đàn','Đàn guitar điện'],
-            ['74','⚡⛵','Ninja','Ném phi tiêu','Phi tiêu'],
-            ['75','⚡🪝','Thợ săn','Giăng bẫy','Bẫy thú'],
-            ['76','⚡🐌','Bác sĩ phẫu thuật','Rạch mổ','Dao mổ'],
-            ['77','⚡⚡','Thần sấm','Phóng sét','Hai tia sét'],
-            ['78','⚡🕶','Hacker','Gõ phím','Laptop góc cạnh'],
-            ['79','⚡🎈','Cậu bé tinh nghịch','Chọc kim','Bóng bay'],
-          ]},
-          { label: '80–89', emoji: '🕶', theme: 'Đồng hồ cát / Con nhện + ...', rows: [
-            ['80','🕶⭕','Điệp viên','Nhìn qua kính nhòm','Kính nhòm tròn'],
-            ['81','🕶🕯','Thầy phù thủy','Đọc thần chú','Đũa phép'],
-            ['82','🕶🦢','Người mẫu','Sải bước','Kính mắt sang trọng'],
-            ['83','🕶👂','Kỹ sư âm thanh','Đeo headphone','Bộ mixer âm thanh'],
-            ['84','🕶⛵','Nhà thám hiểm','Cắm cờ','Kính viễn vọng'],
-            ['85','🕶🪝','Thám tử','Kéo người','Còng số 8'],
-            ['86','🕶🐌','Nhà khoa học','Quan sát','Kính hiển vi'],
-            ['87','🕶⚡','Siêu anh hùng','Bay tốc độ','Ánh sáng sấm sét'],
-            ['88','🕶🕶','Người vô cực','Quay vô tận','Dải Mobius'],
-            ['89','🕶🎈','Trẻ em đeo kính','Bay lên','Kính bay'],
-          ]},
-          { label: '90–99', emoji: '🎈', theme: 'Bóng bay / Nòng nọc đuôi thẳng + ...', rows: [
-            ['90','🎈⭕','Nhà du hành vũ trụ','Bay trong không gian','Khinh khí cầu khổng lồ'],
-            ['91','🎈🕯','Người leo núi','Cắm cờ đỉnh núi','Dây leo'],
-            ['92','🎈🦢','Thiên thần','Bay lượn','Đôi cánh trắng'],
-            ['93','🎈👂','Ca sĩ nổi tiếng','Hát trên sân khấu','Micro không dây'],
-            ['94','🎈⛵','Phi công','Lái máy bay','Cánh quạt'],
-            ['95','🎈🪝','Người leo dây','Đu dây','Móc leo núi'],
-            ['96','🎈🐌','Nhà ảo thuật','Thổi bong bóng','Bong bóng xà phòng'],
-            ['97','🎈⚡','Siêu anh hùng bay','Phóng nhanh','Tia laser'],
-            ['98','🎈🕶','Điệp viên','Nhảy dù','Kính phi công'],
-            ['99','🎈🎈','Người tổ chức tiệc','Thổi bóng','Bó bóng bay'],
-          ]},
+
         ].map(group => (
           <div key={group.label} className="mt-4">
             <div className="flex items-center gap-2 mb-2">
