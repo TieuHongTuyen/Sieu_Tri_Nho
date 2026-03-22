@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useAuth } from '@/hooks/useAuth';
 import { useMemoryData } from '@/hooks/useMemoryData';
 import { Plus, Trash2, Image as ImageIcon, BookOpen, Pencil, X } from 'lucide-react';
 import { MemoryItem } from '@/types';
 import PAOGuide from '@/components/PAOGuide';
 
 export default function LibraryPage() {
+  const { user } = useAuth();
   const { items, isLoaded, addItem, updateItem, deleteItem } = useMemoryData();
   const [activeTab, setActiveTab] = useState<'library' | 'pao'>('library');
   const [isAdding, setIsAdding] = useState(false);
@@ -109,6 +111,7 @@ export default function LibraryPage() {
           <h1 className="text-2xl md:text-3xl font-bold text-zinc-900 leading-tight">Thư viện Dữ liệu</h1>
           <p className="text-zinc-500 mt-0.5 text-sm md:text-base">Quản lý {items.length} cặp số và hình ảnh</p>
         </div>
+        {user?.email === 'tieuhongtuyen@gmail.com' && (
         <button
           onClick={() => setIsAdding(!isAdding)}
           className="bg-indigo-600 text-white px-4 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm min-h-[2.75rem] shrink-0"
@@ -116,6 +119,7 @@ export default function LibraryPage() {
           <Plus className="w-5 h-5" />
           <span className="hidden sm:inline">Thêm mới</span>
         </button>
+        )}
       </div>
 
       {/* Add Form */}
@@ -209,6 +213,7 @@ export default function LibraryPage() {
                 {item.number}
               </div>
               {/* Edit/Delete buttons */}
+              {user?.email === 'tieuhongtuyen@gmail.com' && (
               <div className="absolute top-2 right-2 flex gap-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                 <button 
                   onClick={() => setEditingItem(item)}
@@ -225,6 +230,7 @@ export default function LibraryPage() {
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
               </div>
+              )}
             </div>
             <div className="h-[40%] p-2.5 sm:p-3 md:p-4 flex flex-col justify-start items-start text-left bg-white">
               <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1 sm:mb-1.5">{item.imageName}</h3>
