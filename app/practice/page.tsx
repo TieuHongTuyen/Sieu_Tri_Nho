@@ -11,7 +11,6 @@ export default function PracticePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Initialize practice items when data loads
   useEffect(() => {
     if (isLoaded && items.length > 0) {
       setTimeout(() => {
@@ -24,10 +23,10 @@ export default function PracticePage() {
 
   if (items.length === 0) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-20 text-center w-full">
+      <div className="w-full max-w-3xl mx-auto px-4 py-16 text-center">
         <h2 className="text-2xl font-bold text-zinc-900 mb-4">Chưa có dữ liệu để luyện tập</h2>
-        <p className="text-zinc-500 mb-8">Vui lòng thêm dữ liệu vào thư viện trước khi bắt đầu.</p>
-        <a href="/library" className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors">
+        <p className="text-zinc-500 mb-8 text-base">Vui lòng thêm dữ liệu vào thư viện trước khi bắt đầu.</p>
+        <a href="/library" className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors inline-block min-h-[2.75rem]">
           Đến Thư viện
         </a>
       </div>
@@ -69,25 +68,26 @@ export default function PracticePage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full flex flex-col items-center">
-      <div className="w-full flex justify-between items-center mb-8">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 flex flex-col items-center overflow-x-hidden">
+      {/* Header */}
+      <div className="w-full flex justify-between items-center mb-6 md:mb-8 gap-3">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-900">Luyện tập Flashcard</h1>
-          <p className="text-zinc-500 mt-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-zinc-900 leading-tight">Luyện tập Flashcard</h1>
+          <p className="text-zinc-500 mt-0.5 text-sm md:text-base">
             Thẻ {currentIndex + 1} / {practiceItems.length}
           </p>
         </div>
         <div className="flex gap-2">
           <button 
             onClick={handleReset}
-            className="p-2 text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors"
+            className="p-3 text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-xl transition-colors min-h-[2.75rem] min-w-[2.75rem] flex items-center justify-center"
             title="Sắp xếp theo thứ tự"
           >
             <RotateCcw className="w-5 h-5" />
           </button>
           <button 
             onClick={handleShuffle}
-            className="p-2 text-zinc-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+            className="p-3 text-zinc-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-colors min-h-[2.75rem] min-w-[2.75rem] flex items-center justify-center"
             title="Trộn ngẫu nhiên"
           >
             <Shuffle className="w-5 h-5" />
@@ -95,26 +95,26 @@ export default function PracticePage() {
         </div>
       </div>
 
-      {/* Flashcard Container */}
-      <div className="w-full max-w-lg perspective-1000 mx-auto mb-12">
+      {/* Flashcard */}
+      <div className="w-full max-w-sm md:max-w-lg perspective-1000 mx-auto mb-8 md:mb-12">
         <motion.div
           className="relative w-full aspect-[3/4] sm:aspect-square cursor-pointer preserve-3d"
           onClick={() => setIsFlipped(!isFlipped)}
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.6, type: 'spring', stiffness: 260, damping: 20 }}
         >
-          {/* Front of card (Number) */}
-          <div className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-xl border border-zinc-100 flex flex-col items-center justify-center p-8">
-            <span className="text-zinc-400 font-medium tracking-widest uppercase mb-8">Mặt trước</span>
-            <h2 className="text-9xl sm:text-[12rem] font-black text-zinc-900 tracking-tighter">
+          {/* Front (Number) */}
+          <div className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-xl border border-zinc-100 flex flex-col items-center justify-center p-6 md:p-8">
+            <span className="text-zinc-400 font-medium tracking-widest uppercase mb-6 text-sm">Mặt trước</span>
+            <h2 className="text-8xl md:text-[10rem] font-black text-zinc-900 tracking-tighter">
               {currentItem?.number}
             </h2>
-            <p className="absolute bottom-8 text-zinc-400 text-sm">Chạm để lật thẻ</p>
+            <p className="absolute bottom-6 text-zinc-400 text-sm">Chạm để lật thẻ</p>
           </div>
 
-          {/* Back of card (Image & Action) */}
+          {/* Back (Image & Action) */}
           <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white rounded-3xl shadow-xl border border-zinc-100 overflow-hidden flex flex-col">
-            <div className="h-3/5 w-full relative bg-zinc-100">
+            <div className="h-3/5 w-full relative bg-zinc-100 overflow-hidden">
               {currentItem?.imageUrl && (
                 <img 
                   src={currentItem.imageUrl} 
@@ -122,13 +122,13 @@ export default function PracticePage() {
                   className="w-full h-full object-cover"
                 />
               )}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl font-bold text-2xl shadow-sm text-indigo-600">
+              <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-xl font-bold text-xl shadow-sm text-indigo-600">
                 {currentItem?.number}
               </div>
             </div>
-            <div className="h-2/5 p-8 flex flex-col justify-center items-center text-center bg-white">
-              <h3 className="text-3xl font-bold text-zinc-900 mb-2">{currentItem?.imageName}</h3>
-              <p className="text-xl text-emerald-600 font-medium flex items-center gap-2">
+            <div className="h-2/5 p-5 md:p-8 flex flex-col justify-center items-center text-center bg-white">
+              <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2">{currentItem?.imageName}</h3>
+              <p className="text-lg md:text-xl text-emerald-600 font-medium">
                 Hành động: {currentItem?.action}
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function PracticePage() {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-3 sm:gap-6 w-full max-w-sm mx-auto">
+      <div className="flex items-center justify-center gap-3 w-full max-w-sm mx-auto">
         <button
           onClick={handlePrev}
           className="w-14 h-14 shrink-0 rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-zinc-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all active:scale-95"
@@ -147,7 +147,7 @@ export default function PracticePage() {
         
         <button
           onClick={() => setIsFlipped(!isFlipped)}
-          className="flex-1 py-4 rounded-2xl bg-zinc-900 text-white font-semibold shadow-md hover:bg-zinc-800 transition-colors active:scale-95"
+          className="flex-1 py-4 rounded-2xl bg-zinc-900 text-white font-semibold shadow-md hover:bg-zinc-800 transition-colors active:scale-95 min-h-[3.25rem]"
         >
           {isFlipped ? 'Xem lại số' : 'Xem đáp án'}
         </button>
