@@ -236,6 +236,9 @@ export default function LibraryPage() {
                 <span className="inline-block w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
                 {item.object}
               </p>
+              {item.reason && (
+                <p className="text-zinc-400 mt-1.5 text-xs italic leading-snug">&ldquo;{item.reason}&rdquo;</p>
+              )}
             </div>
           </div>
         ))}
