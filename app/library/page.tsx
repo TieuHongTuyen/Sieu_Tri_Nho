@@ -194,9 +194,9 @@ export default function LibraryPage() {
       )}
 
       {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         {items.map((item) => (
-          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group flex flex-col aspect-[3/4]">
+          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group flex flex-col aspect-[2/3] sm:aspect-[5/7]">
             <div className="h-[60%] w-full bg-zinc-100 relative overflow-hidden shrink-0 border-b border-zinc-100">
               {item.imageUrl ? (
                 <img src={item.imageUrl} alt={item.imageName} className="w-full h-full object-cover" />
@@ -209,36 +209,36 @@ export default function LibraryPage() {
                 {item.number}
               </div>
               {/* Edit/Delete buttons */}
-              <div className="absolute top-2 right-2 flex gap-1opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-2 right-2 flex gap-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                 <button 
                   onClick={() => setEditingItem(item)}
-                  className="bg-indigo-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-indigo-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.75rem] md:min-w-[2.75rem] flex items-center justify-center"
+                  className="bg-indigo-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-indigo-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.5rem] md:min-w-[2.5rem] flex items-center justify-center"
                   title="Sửa"
                 >
-                  <Pencil className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <Pencil className="w-3.5 h-3.5" />
                 </button>
                 <button 
                   onClick={() => deleteItem(item.id)}
-                  className="bg-red-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-red-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.75rem] md:min-w-[2.75rem] flex items-center justify-center"
+                  className="bg-red-500 text-white p-1.5 md:p-2 rounded-lg hover:bg-red-600 shadow-sm min-h-[2.25rem] min-w-[2.25rem] md:min-h-[2.5rem] md:min-w-[2.5rem] flex items-center justify-center"
                   title="Xóa"
                 >
-                  <Trash2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <Trash2 className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
-            <div className="h-[40%] p-3 md:p-4 flex flex-col justify-start items-start text-left overflow-y-auto">
-              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1 sm:mb-2">{item.imageName}</h3>
-              <div className="flex flex-col gap-1 sm:gap-1.5 w-full text-xs sm:text-sm">
-                <p className="text-emerald-700 font-medium flex gap-1.5">
-                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] sm:text-xs mt-0.5">HĐ:</span>
-                  <span>{item.action}</span>
+            <div className="h-[40%] p-2.5 sm:p-3 md:p-4 flex flex-col justify-start items-start text-left bg-white">
+              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1 sm:mb-1.5">{item.imageName}</h3>
+              <div className="flex flex-col gap-0.5 sm:gap-1 w-full text-[11px] sm:text-[13px] leading-tight flex-1">
+                <p className="text-emerald-700 font-medium flex gap-1.5 items-start">
+                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[9px] sm:text-[10px] mt-[1px] sm:mt-[2px]">HĐ:</span>
+                  <span className="line-clamp-2">{item.action}</span>
                 </p>
-                <p className="text-amber-700 font-medium flex gap-1.5">
-                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] sm:text-xs mt-0.5">VT:</span>
-                  <span>{item.object}</span>
+                <p className="text-amber-700 font-medium flex gap-1.5 items-start">
+                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[9px] sm:text-[10px] mt-[1px] sm:mt-[2px]">VT:</span>
+                  <span className="line-clamp-2">{item.object}</span>
                 </p>
                 {item.reason && (
-                  <p className="text-zinc-500 italic mt-0.5 md:mt-1 border-l-2 border-zinc-200 pl-2 py-0.5 text-[11px] sm:text-xs leading-snug">
+                  <p className="text-zinc-500 italic mt-0.5 border-l-2 border-zinc-200 pl-2 py-0.5 text-[10px] sm:text-xs leading-snug line-clamp-2 sm:line-clamp-3">
                     &ldquo;{item.reason}&rdquo;
                   </p>
                 )}
