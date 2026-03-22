@@ -7,7 +7,6 @@ coverage/
 !.env.example
 
 # Build artifacts
-out/
 tsconfig.tsbuildinfo
 
 # Temp files
