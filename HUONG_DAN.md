@@ -175,7 +175,15 @@ CARD / THẺ NHỚ (áp dụng cho library và practice)
   + Mobile: `grid-cols-1` (1 cột) → card đủ rộng để đọc, không bị bẹp
   + Tablet+: `sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`
 
-Sau khi refactor, liệt kê ngắn những gì đã thay đổi.
-Đừng chỉnh logic hay nội dung, chỉ chỉnh CSS/layout/spacing.
+7. **Cấu hình Dark Mode (Chế độ tối)**
+   - Dự án dùng `next-themes` kết hợp Tailwind CSS v4.
+   - Để kích hoạt thao tác nút gạt chủ động (không bị ghim tĩnh theo cài đặt hệ điều hành của thiết bị), ứng dụng bắt buộc khai báo `@custom-variant dark (&:where(.dark, .dark *));` trong tệp `app/globals.css`.
+   - Trong `Navbar.tsx`, logic gạt (Toggle) được so sánh thông qua biến `resolvedTheme` để phản hồi chính xác. 
+   - Khi tạo Component mới, vui lòng khai báo kèm bộ class `dark:bg-*`, `dark:border-*`, `dark:text-*` (VD: `bg-white dark:bg-zinc-950`) để các phần sáng màu không bị lóa khi đang ở chế độ nền đen.
+
+8. **Thanh điều hướng Mobile (Navbar)**
+   - Để tối ưu diện tích thiết bị di động, nút Đăng xuất nằm ở không gian Top Bar sẽ được cấu hình hiển thị dạng Logo Icon `LogOut` bên cạnh Avatar, phân tách biệt với giao diện chữ hiện đại trên Desktop.
+
+Sau khi refactor, hãy cập nhật ngắn gọn những gì đã thay đổi ở đây. Đừng chỉnh logic nếu không cần thiết.
 
 🎊 Chúc bạn phát triển dự án "Siêu Trí Nhớ" ngày càng tốt hơn!
