@@ -212,14 +212,16 @@ export default function PracticePage() {
                   </div>
                 </div>
                 <div className="p-4 md:p-5 flex flex-col justify-start items-start text-left bg-white min-h-[7rem] md:min-h-0">
-                  <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 w-full line-clamp-1">{currentItem?.imageName}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 w-full line-clamp-1">
+                    <span className="text-zinc-400 mr-2 font-semibold">P:</span>{currentItem?.imageName}
+                  </h3>
                   <div className="flex flex-col gap-1.5 w-full text-sm md:text-base">
                     <p className="text-emerald-700 font-medium flex gap-2">
-                      <span className="text-emerald-800/60 text-xs uppercase tracking-wider font-bold mt-1 shrink-0">Hành động:</span> 
+                      <span className="text-emerald-800/60 text-sm md:text-base tracking-wider font-bold shrink-0">A:</span> 
                       <span className="line-clamp-2">{currentItem?.action}</span>
                     </p>
                     <p className="text-amber-700 font-medium flex gap-2">
-                      <span className="text-amber-800/60 text-xs uppercase tracking-wider font-bold mt-1 shrink-0">Vật thể:</span> 
+                      <span className="text-amber-800/60 text-sm md:text-base tracking-wider font-bold shrink-0">O:</span> 
                       <span className="line-clamp-2">{currentItem?.object}</span>
                     </p>
                     {currentItem?.reason && (

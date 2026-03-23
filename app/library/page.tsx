@@ -246,14 +246,16 @@ export default function LibraryPage() {
               )}
             </div>
             <div className="p-3 md:p-4 flex flex-col justify-start items-start text-left bg-white">
-              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1.5">{item.imageName}</h3>
+              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1.5">
+                <span className="text-zinc-400 mr-1.5 font-semibold">P:</span>{item.imageName}
+              </h3>
               <div className="flex flex-col gap-1 w-full text-xs sm:text-sm leading-snug">
                 <p className="text-emerald-700 font-medium flex gap-1.5 items-start">
-                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] mt-[1px]">HĐ:</span>
+                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-xs mt-[1px]">A:</span>
                   <span>{item.action}</span>
                 </p>
                 <p className="text-amber-700 font-medium flex gap-1.5 items-start">
-                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] mt-[1px]">VT:</span>
+                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-xs mt-[1px]">O:</span>
                   <span>{item.object}</span>
                 </p>
                 {item.reason && (
