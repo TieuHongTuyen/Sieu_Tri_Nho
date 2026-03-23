@@ -2,12 +2,18 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Brain, BookOpen, BrainCircuit, Timer, ListOrdered } from 'lucide-react';
+import { Brain, BookOpen, BrainCircuit, Timer, ListOrdered, LogOut, Sun, Moon } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const { user, loading, loginWithGoogle, logout } = useAuth();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const navLinks = [
     { href: '/library',       label: 'Thư viện',   Icon: BookOpen },
@@ -19,12 +25,12 @@ export default function Navbar() {
   return (
     <>
       {/* ===== TOP BAR (mobile + desktop) ===== */}
-      <nav className="bg-white border-b border-zinc-200 sticky top-0 z-50">
+      <nav className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50 transition-colors">
         <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 min-h-[2.75rem]">
             <Brain className="h-7 w-7 text-indigo-600 shrink-0" />
-            <span className="font-bold text-lg tracking-tight text-zinc-900 hidden sm:block">
+            <span className="font-bold text-lg tracking-tight text-zinc-900 dark:text-zinc-100 hidden sm:block">
               Siêu Trí Nhớ
             </span>
           </Link>
@@ -39,8 +45,8 @@ export default function Navbar() {
                   href={href}
                   className={`text-sm font-medium transition-colors py-1 border-b-2 ${
                     isActive
-                      ? 'border-indigo-500 text-zinc-900'
-                      : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:border-zinc-300'
+                      ? 'border-indigo-500 text-zinc-900 dark:text-zinc-100'
+                      : 'border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 hover:border-zinc-300 dark:hover:border-zinc-700'
                   }`}
                 >
                   {label}
@@ -49,18 +55,30 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Auth */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Auth & Controls */}
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+            {/* Nút Dark mode */}
+            {mounted && (
+              <button
+                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                 className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors rounded-full"
+                 aria-label="Toggle Dark Mode"
+              >
+                <Sun className="h-5 w-5 dark:hidden" />
+                <Moon className="h-5 w-5 hidden dark:block" />
+              </button>
+            )}
+
             {!loading && (
               user ? (
                 <div className="flex items-center gap-2">
                   <div className="hidden sm:flex flex-col items-end">
-                    <span className="text-sm font-bold text-zinc-900 leading-tight">
+                    <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-tight">
                       {user.displayName || 'Người chơi'}
                     </span>
                     <button
                       onClick={logout}
-                      className="text-xs font-medium text-zinc-500 hover:text-red-500 transition-colors"
+                      className="text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
                     >
                       Đăng xuất
                     </button>
@@ -69,18 +87,26 @@ export default function Navbar() {
                     <img
                       src={user.photoURL}
                       alt="Avatar"
-                      className="w-9 h-9 rounded-full border border-zinc-200 shadow-sm shrink-0"
+                      className="w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm shrink-0"
                     />
                   ) : (
-                    <div className="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold shrink-0">
                       {user.email?.charAt(0).toUpperCase() || 'U'}
                     </div>
                   )}
+                  {/* Nút logout dành cho mobile */}
+                  <button
+                    onClick={logout}
+                    className="sm:hidden p-2 -mr-2 text-zinc-500 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                    title="Đăng xuất"
+                  >
+                    <LogOut className="w-5 h-5" />
+                  </button>
                 </div>
               ) : (
                 <button
                   onClick={loginWithGoogle}
-                  className="bg-zinc-900 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-zinc-800 transition-colors shadow-sm flex items-center gap-2 min-h-[2.75rem]"
+                  className="bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-4 py-2 rounded-full text-sm font-bold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm flex items-center gap-2 min-h-[2.75rem]"
                 >
                   <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -98,7 +124,7 @@ export default function Navbar() {
 
       {/* ===== BOTTOM NAV — chỉ hiện trên mobile ===== */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-zinc-200 md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 md:hidden transition-colors"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <div className="grid grid-cols-4">
@@ -108,10 +134,10 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`flex flex-col items-center justify-center gap-0.5 min-h-[3.5rem] py-2 text-xs font-medium transition-colors ${
+                className={`flex flex-col items-center justify-center gap-0.5 min-h-[3.5rem] py-2 text-xs font-medium transition-colors relative ${
                   isActive
-                    ? 'text-indigo-600'
-                    : 'text-zinc-500 hover:text-zinc-800'
+                    ? 'text-indigo-600 dark:text-indigo-400'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200'
                 }`}
               >
                 <Icon

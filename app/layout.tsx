@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css'; // Global styles
 import Navbar from '@/components/Navbar';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -19,13 +20,15 @@ export const viewport = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="vi" className={inter.variable}>
-      <body className="font-sans bg-zinc-50 text-zinc-900 min-h-screen flex flex-col antialiased overflow-x-hidden" suppressHydrationWarning>
-        <Navbar />
-        {/* pb-20 để không bị bottom nav che khuất trên mobile */}
-        <main className="flex-1 flex flex-col pb-20 md:pb-0">
-          {children}
-        </main>
+    <html lang="vi" className={inter.variable} suppressHydrationWarning>
+      <body className="font-sans bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 min-h-screen flex flex-col antialiased overflow-x-hidden" suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          {/* pb-20 để không bị bottom nav che khuất trên mobile */}
+          <main className="flex-1 flex flex-col pb-20 md:pb-0">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
