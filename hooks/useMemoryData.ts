@@ -8,8 +8,8 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "id": "00",
     "number": "00",
     "imageName": "Arum",
-    "action": "Lăn người tròn nghiền nát kẻ địch",
-    "object": "Khối cầu đất khổng lồ",
+    "action": "Trói kẻ địch bằng phép thuật",
+    "object": "Dây phép thuật",
     "reason": "Thân hình to tròn, 2 vòng năng lượng bao quanh",
     "imageUrl": "/images/00.jpg"
   },
@@ -17,18 +17,18 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "id": "01",
     "number": "01",
     "imageName": "Arduin",
-    "action": "Đâm thẳng khiên về phía trước",
-    "object": "Khiên tròn + giáo thẳng",
-    "reason": "Khiên tròn + thân đứng thẳng như cây gậy",
+    "action": "Đâm vũ kí về phía trước",
+    "object": "Vũ khí dài thẳng",
+    "reason": "Thân to tròn + vũ khí dài thẳng",
     "imageUrl": "/images/01.jpg"
   },
   {
     "id": "02",
     "number": "02",
     "imageName": "Annette",
-    "action": "Thổi lốc xoáy cuốn kẻ địch bay lên",
+    "action": "Thổi lốc xoáy cuốn kẻ địch",
     "object": "Cây quạt xòe tròn",
-    "reason": "Váy xòe tròn + tóc dài uốn cong như cổ thiên nga",
+    "reason": "Váy xòe tròn + tóc dài uốn cong",
     "imageUrl": "/images/02.jpg"
   },
   {
@@ -36,26 +36,26 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "number": "03",
     "imageName": "Alice",
     "action": "Hút kẻ địch vào tâm điểm bằng lực hút",
-    "object": "Quả cầu ma thuật",
-    "reason": "Khối cầu tròn + tóc 2 bên tai như tai thỏ / sóng đôi",
+    "object": "Gậy ma thuật",
+    "reason": "Khối cầu tròn + tóc 2 bên tai",
     "imageUrl": "/images/03.jpg"
   },
   {
     "id": "04",
     "number": "04",
     "imageName": "Ata",
-    "action": "Phóng xúc tu bắt kẻ địch bất động",
-    "object": "Xúc tu + khiên tròn",
-    "reason": "Khiên tròn to + tư thế cầm cờ góc vuông",
+    "action": "Phóng mỏ neo bắt kẻ địch",
+    "object": "Mỏ neo dài",
+    "reason": "Mỏ neo + tư thế cầm góc vuông",
     "imageUrl": "/images/04.jpg"
   },
   {
     "id": "05",
     "number": "05",
     "imageName": "Aoi",
-    "action": "Vung kiếm cong móc ngược kéo địch lại",
-    "object": "Kiếm cong một lưỡi",
-    "reason": "Vũ khí cong móc + di chuyển vòng tròn",
+    "action": "Vung móng vuốt móc ngược kéo địch lại",
+    "object": "Móng vuốt cong",
+    "reason": "Móng vuốt cong + di chuyển vòng tròn",
     "imageUrl": "/images/05.jpg"
   },
   {
@@ -64,16 +64,16 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "imageName": "Chaugnar",
     "action": "Xoay vòi húc bay địch sang ngang",
     "object": "Vòi khổng lồ",
-    "reason": "Bụng phình to tròn + vòi dài như đuôi nòng nọc",
+    "reason": "Bụng phình to tròn + vòi dài",
     "imageUrl": "/images/06.jpg"
   },
   {
     "id": "07",
     "number": "07",
     "imageName": "Aleister",
-    "action": "Phóng năng lượng bóng tối xuyên thủng",
+    "action": "Phóng năng lượng bóng tối",
     "object": "Quả cầu bóng tối nhọn",
-    "reason": "Hào quang cầu tròn + áo choàng nhọn góc như lưỡi dao",
+    "reason": "Hào quang cầu tròn + áo choàng nhọn góc",
     "imageUrl": "/images/07.jpg"
   },
   {
@@ -82,25 +82,25 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "imageName": "Azzen'Ka",
     "action": "Triệu hồi 2 quả cầu xoay quanh người",
     "object": "2 quả cầu đá xoay",
-    "reason": "2 quả cầu năng lượng xoay = đồng hồ cát + tròn",
+    "reason": "2 quả cầu năng lượng xoay tròn",
     "imageUrl": "/images/08.jpg"
   },
   {
     "id": "09",
     "number": "09",
     "imageName": "Amily",
-    "action": "Bật nhảy lên cao đạp xuống đầu địch",
+    "action": "Tung cước đá vào đầu địch",
     "object": "Đôi giày chiến đấu",
-    "reason": "Hào quang tròn + nhảy lên cao như bóng bay",
+    "reason": "Vũ khí là đôi giày có ám khí",
     "imageUrl": "/images/09.jpg"
   },
   {
     "id": "10",
     "number": "10",
-    "imageName": "Arthur",
+    "imageName": "Thane",
     "action": "Vung kiếm chém đứng xuyên giáp",
     "object": "Kiếm một tay + khiên tròn",
-    "reason": "Kiếm thẳng + khiên tròn — hiệp sĩ cổ điển",
+    "reason": "Kiếm thẳng + khiên tròn",
     "imageUrl": "/images/10.jpg"
   },
   {
@@ -116,61 +116,61 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "id": "12",
     "number": "12",
     "imageName": "Airi",
-    "action": "Lao tới đâm chuỗi 3 nhát liên tiếp",
-    "object": "Gậy dài nhọn 2 đầu",
-    "reason": "Cầm gậy dài + di chuyển uyển chuyển nhẹ nhàng",
+    "action": "Lướt và chém liên tiếp",
+    "object": "Kiếm dài Katana",
+    "reason": "Cầm kiếm dài + di chuyển nhẹ nhàng",
     "imageUrl": "/images/12.jpg"
   },
   {
     "id": "13",
     "number": "13",
-    "imageName": "Astrid",
-    "action": "Phóng giáo thẳng xuyên hàng địch",
-    "object": "Giáo dài thẳng",
-    "reason": "Giáo dài thẳng + tóc 2 bên sóng",
+    "imageName": "Krixi",
+    "action": "Tạo mưa sao băng",
+    "object": "Mưa sao băng",
+    "reason": "Thân hình nhỏ nhắn + 2 cánh bướm",
     "imageUrl": "/images/13.jpg"
   },
   {
     "id": "14",
     "number": "14",
     "imageName": "Baldum",
-    "action": "Lao vào húc ngã hàng loạt địch",
-    "object": "Thân hình khổng lồ",
-    "reason": "Thân to thẳng + cầm lá cờ / vật to góc vuông",
+    "action": "Lao vào húc tung hàng loạt địch",
+    "object": "Gậy lớn dài",
+    "reason": "Gậy lớn thẳng + bốn chân",
     "imageUrl": "/images/14.jpg"
   },
   {
     "id": "15",
     "number": "15",
-    "imageName": "Batman",
-    "action": "Ném batarang móc xích kẻ địch",
-    "object": "Batarang cong",
-    "reason": "Áo choàng dài thẳng + móc batarang cong",
+    "imageName": "Mina",
+    "action": "Xoay lưỡi hái móc kẻ địch",
+    "object": "Lưỡi hái cong",
+    "reason": "Thân cao to + lưỡi hái cong",
     "imageUrl": "/images/15.jpg"
   },
   {
     "id": "16",
     "number": "16",
-    "imageName": "Butterfly",
-    "action": "Biến mất rồi xuất hiện sau lưng địch chém",
-    "object": "Kiếm cong mỏng",
-    "reason": "Thân mảnh thẳng + kiếm uốn cong cuộn",
+    "imageName": "Enzo",
+    "action": "Tung tỏa liêm móc kẻ địch",
+    "object": "Tỏa liêm cong",
+    "reason": "Thân mảnh thẳng + tỏa liêm cong",
     "imageUrl": "/images/16.jpg"
   },
   {
     "id": "17",
     "number": "17",
     "imageName": "Bright",
-    "action": "Lướt nhanh bắn loạt đạn năng lượng",
-    "object": "Súng năng lượng dài",
-    "reason": "Súng dài thẳng + bắn tia tốc độ cao",
+    "action": "Vung đao ánh sáng đột kích kẻ địch",
+    "object": "Đao ánh sáng dài",
+    "reason": "Đao ánh sáng + bắn tia tốc độ cao",
     "imageUrl": "/images/17.jpg"
   },
   {
     "id": "18",
     "number": "18",
     "imageName": "Celica",
-    "action": "Khóa mục tiêu ngắm chính xác bắn xuyên",
+    "action": "Khóa mục tiêu ngắm bắn",
     "object": "Súng ngắm + kính",
     "reason": "Súng dài + kính ngắm công nghệ cao",
     "imageUrl": "/images/18.jpg"
@@ -181,7 +181,7 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "imageName": "Capheny",
     "action": "Thả drone tấn công bắn dồn dập",
     "object": "Drone bay + súng điều khiển",
-    "reason": "Gậy điều khiển + drone bay lên như bóng",
+    "reason": "Súng điều khiển + drone bay lên như bóng",
     "imageUrl": "/images/19.jpg"
   },
   {
@@ -190,34 +190,34 @@ export const DEFAULT_DATA: MemoryItem[] = [
     "imageName": "D'Arcy",
     "action": "Triệu hồi hố đen hút tất cả vào giữa",
     "object": "Quả cầu hố đen tròn",
-    "reason": "Áo trắng tà bay + hào quang cầu tròn",
+    "reason": "Áo xanh tà bay + hào quang cầu tròn",
     "imageUrl": "/images/20.jpg"
   },
   {
     "id": "21",
     "number": "21",
     "imageName": "Dextra",
-    "action": "Lao thẳng vào địch đấm liên hoàn",
-    "object": "Găng tay năng lượng",
-    "reason": "Dáng cao thanh + cầm vũ khí thẳng",
+    "action": "Lao thẳng vào địch cắt liên hoàn",
+    "object": "Máy cưa năng lượng",
+    "reason": "Máy cưa cong + dáng cao thanh",
     "imageUrl": "/images/21.jpg"
   },
   {
     "id": "22",
     "number": "22",
-    "imageName": "Điêu Thuyền",
-    "action": "Xoay người thả cánh hoa trói địch",
-    "object": "Cánh hoa tím + dải lụa",
-    "reason": "Váy 2 tà bay như 2 cánh thiên nga đối xứng",
+    "imageName": "Keera",
+    "action": "Lướt, đồng thời tỏa ra 2 phân thân",
+    "object": "Hai phân thân",
+    "reason": "Hai ống tay áo dài + hai phân thân",
     "imageUrl": "/images/22.jpg"
   },
   {
     "id": "23",
     "number": "23",
     "imageName": "Dirak",
-    "action": "Mở cổng không gian dịch chuyển tức thời",
-    "object": "Cổng năng lượng tím",
-    "reason": "Cánh bay + năng lượng sóng phát 2 bên",
+    "action": "Bắn tia sáng năng lượng",
+    "object": "Đôi cánh cơ học",
+    "reason": "Đôi cánh cơ học + năng lượng 2 bên",
     "imageUrl": "/images/23.jpg"
   },
   {

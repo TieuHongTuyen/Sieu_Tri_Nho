@@ -148,6 +148,22 @@ BREAKPOINT
   dùng @media (min-width: 768px) cho tablet/desktop
 - Không dùng @media max-width
 
+CARD / THẺ NHỚ (áp dụng cho library và practice)
+- Ảnh thẻ PAO có tỉ lệ 5:4 (ngang) → dùng `aspect-[5/4]` cho vùng ảnh,
+  ảnh bên trong dùng `absolute inset-0 w-full h-full object-cover` → không bị letterbox
+- Không dùng `h-[60%]` / `h-[40%]` cứng nhắc cho ảnh và text → text bị khuất
+- Vùng text: để tự nhiên (padding only), không cố định chiều cao bằng %
+- Chiều cao nhất quán trên mobile:
+  + Thêm `min-h-[7rem] md:min-h-0` cho vùng text (đảm bảo card ngắn không bị lép)
+  + Dùng `line-clamp-1` cho tên nhân vật, `line-clamp-2` cho hành động/vật thể/lý do
+- Flashcard lật 3D (practice):
+  + Mặt sau (Back) để **normal flow** → tự định chiều cao container
+  + Mặt trước (Front) dùng `absolute inset-0` → fill đúng chiều cao mặt sau
+  + Không dùng ghost element (dễ bị lệch do text wrap khác nhau)
+- Grid thư viện:
+  + Mobile: `grid-cols-1` (1 cột) → card đủ rộng để đọc, không bị bẹp
+  + Tablet+: `sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`
+
 Sau khi refactor, liệt kê ngắn những gì đã thay đổi.
 Đừng chỉnh logic hay nội dung, chỉ chỉnh CSS/layout/spacing.
 
