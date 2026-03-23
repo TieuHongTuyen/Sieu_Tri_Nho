@@ -181,14 +181,14 @@ export default function PracticePage() {
         </div>
       ) : (
         <>
-          <div className="w-full max-w-sm md:max-w-lg perspective-1000 mx-auto mb-8 md:mb-12">
+          <div className="w-full max-w-sm md:max-w-lg perspective-1000 mx-auto mb-6 md:mb-10">
             <motion.div
-              className="relative w-full aspect-[3/4] cursor-pointer preserve-3d"
+              className="relative w-full cursor-pointer preserve-3d"
               onClick={() => setIsFlipped(!isFlipped)}
               animate={{ rotateY: isFlipped ? 180 : 0 }}
               transition={{ duration: 0.6, type: 'spring', stiffness: 260, damping: 20 }}
             >
-              {/* Front (Number) */}
+              {/* Front (Number) — absolute inset-0, fill height từ Back */}
               <div className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-xl border border-zinc-100 flex flex-col items-center justify-center p-6 md:p-8">
                 <span className="text-zinc-400 font-medium tracking-widest uppercase mb-6 text-sm">Mặt trước</span>
                 <h2 className="text-8xl md:text-[10rem] font-black text-zinc-900 tracking-tighter">
@@ -197,33 +197,33 @@ export default function PracticePage() {
                 <p className="absolute bottom-6 text-zinc-400 text-sm">Chạm để lật thẻ</p>
               </div>
 
-              {/* Back (Image & Action) */}
-              <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white rounded-3xl shadow-xl border border-zinc-100 overflow-hidden flex flex-col">
-                <div className="h-[60%] w-full relative bg-zinc-100 overflow-hidden shrink-0 border-b border-zinc-100">
+              {/* Back (Image & Action) — normal flow, định chiều cao container */}
+              <div className="backface-hidden rotate-y-180 bg-white rounded-3xl shadow-xl border border-zinc-100 overflow-hidden flex flex-col">
+                <div className="w-full relative bg-zinc-100 overflow-hidden shrink-0 border-b border-zinc-100 aspect-[5/4]">
                   {currentItem?.imageUrl && (
                     <img 
                       src={currentItem.imageUrl} 
                       alt={currentItem.imageName}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-xl font-bold text-xl shadow-sm text-indigo-600">
                     {currentItem?.number}
                   </div>
                 </div>
-                <div className="h-[40%] p-5 md:p-6 flex flex-col justify-center items-start text-left bg-white overflow-y-auto">
-                  <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 w-full">{currentItem?.imageName}</h3>
+                <div className="p-4 md:p-5 flex flex-col justify-start items-start text-left bg-white min-h-[7rem] md:min-h-0">
+                  <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 w-full line-clamp-1">{currentItem?.imageName}</h3>
                   <div className="flex flex-col gap-1.5 w-full text-sm md:text-base">
                     <p className="text-emerald-700 font-medium flex gap-2">
                       <span className="text-emerald-800/60 text-xs uppercase tracking-wider font-bold mt-1 shrink-0">Hành động:</span> 
-                      <span>{currentItem?.action}</span>
+                      <span className="line-clamp-2">{currentItem?.action}</span>
                     </p>
                     <p className="text-amber-700 font-medium flex gap-2">
                       <span className="text-amber-800/60 text-xs uppercase tracking-wider font-bold mt-1 shrink-0">Vật thể:</span> 
-                      <span>{currentItem?.object}</span>
+                      <span className="line-clamp-2">{currentItem?.object}</span>
                     </p>
                     {currentItem?.reason && (
-                      <p className="text-zinc-500 italic mt-2 text-xs md:text-sm border-l-2 border-zinc-200 pl-3 py-0.5">
+                      <p className="text-zinc-500 italic mt-2 text-xs md:text-sm border-l-2 border-zinc-200 pl-3 py-0.5 line-clamp-2">
                         "{currentItem.reason}"
                       </p>
                     )}

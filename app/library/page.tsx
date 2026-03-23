@@ -198,12 +198,12 @@ export default function LibraryPage() {
       )}
 
       {/* Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
         {items.map((item) => (
-          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group flex flex-col aspect-[2/3] sm:aspect-[5/7]">
-            <div className="h-[60%] w-full bg-zinc-100 relative overflow-hidden shrink-0 border-b border-zinc-100">
+          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden group flex flex-col">
+            <div className="w-full bg-zinc-100 relative overflow-hidden shrink-0 border-b border-zinc-100 aspect-[5/4]">
               {item.imageUrl ? (
-                <img src={item.imageUrl} alt={item.imageName} className="w-full h-full object-cover" />
+                <img src={item.imageUrl} alt={item.imageName} className="absolute inset-0 w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-zinc-300">
                   <ImageIcon className="w-10 h-10" />
@@ -232,19 +232,19 @@ export default function LibraryPage() {
               </div>
               )}
             </div>
-            <div className="h-[40%] p-2.5 sm:p-3 md:p-4 flex flex-col justify-start items-start text-left bg-white">
-              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1 sm:mb-1.5">{item.imageName}</h3>
-              <div className="flex flex-col gap-0.5 sm:gap-1 w-full text-[11px] sm:text-[13px] leading-tight flex-1">
+            <div className="p-3 md:p-4 flex flex-col justify-start items-start text-left bg-white">
+              <h3 className="font-bold text-sm md:text-base text-zinc-900 leading-tight w-full mb-1.5">{item.imageName}</h3>
+              <div className="flex flex-col gap-1 w-full text-xs sm:text-sm leading-snug">
                 <p className="text-emerald-700 font-medium flex gap-1.5 items-start">
-                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[9px] sm:text-[10px] mt-[1px] sm:mt-[2px]">HĐ:</span>
-                  <span className="line-clamp-2">{item.action}</span>
+                  <span className="text-emerald-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] mt-[1px]">HĐ:</span>
+                  <span>{item.action}</span>
                 </p>
                 <p className="text-amber-700 font-medium flex gap-1.5 items-start">
-                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[9px] sm:text-[10px] mt-[1px] sm:mt-[2px]">VT:</span>
-                  <span className="line-clamp-2">{item.object}</span>
+                  <span className="text-amber-800/60 uppercase tracking-wider font-bold shrink-0 text-[10px] mt-[1px]">VT:</span>
+                  <span>{item.object}</span>
                 </p>
                 {item.reason && (
-                  <p className="text-zinc-500 italic mt-0.5 border-l-2 border-zinc-200 pl-2 py-0.5 text-[10px] sm:text-xs leading-snug line-clamp-2 sm:line-clamp-3">
+                  <p className="text-zinc-500 italic mt-1 border-l-2 border-zinc-200 pl-2 py-0.5 text-[11px] sm:text-xs leading-snug">
                     &ldquo;{item.reason}&rdquo;
                   </p>
                 )}
