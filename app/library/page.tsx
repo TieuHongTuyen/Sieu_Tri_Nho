@@ -9,7 +9,7 @@ import PAOGuide from '@/components/PAOGuide';
 
 export default function LibraryPage() {
   const { user } = useAuth();
-  const { items, isLoaded, addItem, updateItem, deleteItem } = useMemoryData();
+  const { items, isLoaded, addItem, updateItem, deleteItem, seedToFirestore } = useMemoryData();
   const [activeTab, setActiveTab] = useState<'library' | 'pao'>('library');
   const [isAdding, setIsAdding] = useState(false);
   const [editingItem, setEditingItem] = useState<MemoryItem | null>(null);
@@ -112,13 +112,26 @@ export default function LibraryPage() {
           <p className="text-zinc-500 mt-0.5 text-sm md:text-base">Quản lý {items.length} cặp số và hình ảnh</p>
         </div>
         {user?.email === 'tieuhongtuyen@gmail.com' && (
-        <button
-          onClick={() => setIsAdding(!isAdding)}
-          className="bg-indigo-600 text-white px-4 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm min-h-[2.75rem] shrink-0"
-        >
-          <Plus className="w-5 h-5" />
-          <span className="hidden sm:inline">Thêm mới</span>
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={async () => {
+              if (confirm('Thao tác này sẽ đẩy 100 bản ghi lên Firestore. Đảm bảo Firestore rules cho phép. Tiếp tục?')) {
+                await seedToFirestore();
+              }
+            }}
+            className="bg-amber-500 text-white px-4 py-3 rounded-xl font-medium hover:bg-amber-600 transition-colors flex items-center shadow-sm min-h-[2.75rem] shrink-0"
+          >
+            <span className="hidden sm:inline">Đồng bộ (Seed 1 lân)</span>
+            <span className="sm:hidden">Seed</span>
+          </button>
+          <button
+            onClick={() => setIsAdding(!isAdding)}
+            className="bg-indigo-600 text-white px-4 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm min-h-[2.75rem] shrink-0"
+          >
+            <Plus className="w-5 h-5" />
+            <span className="hidden sm:inline">Thêm mới</span>
+          </button>
+        </div>
         )}
       </div>
 

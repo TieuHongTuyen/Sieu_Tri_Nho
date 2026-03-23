@@ -906,48 +906,80 @@ export const DEFAULT_DATA: MemoryItem[] = [
   }
 ];
 
+import { db } from '@/lib/firebase';
+import { collection, doc, setDoc, deleteDoc, getDocs, onSnapshot } from 'firebase/firestore';
+
 export function useMemoryData() {
   const [items, setItems] = useState<MemoryItem[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('memory_items');
-    setTimeout(() => {
-      let currentItems = [];
-      if (stored) {
-        currentItems = JSON.parse(stored);
-      }
-      // Migration: Nếu thẻ đầu tiên ko có \`object\` thì chắc chắn là data cũ => Ghi đè DATA mới
-      if (!currentItems.length || !currentItems[0].object) {
+    // Lấy dữ liệu 1 lần từ Firestore thay vì onSnapshot để tránh tiền fetch nếu không cần thiết
+    // nhưng nếu bạn muốn real-time (tức thì khi máy khác sửa) có thể dùng onSnapshot.
+    // Ở đây ta dùng getDocs kết hợp fallback.
+    const colRef = collection(db, 'pao_items');
+    
+    getDocs(colRef)
+      .then((snapshot) => {
+        if (snapshot.empty) {
+          // Fallback: Firestore rỗng (chưa seed), dùng DEFAULT_DATA
+          setItems(DEFAULT_DATA);
+        } else {
+          const fetchedItems: MemoryItem[] = [];
+          snapshot.forEach((d) => {
+            fetchedItems.push(d.data() as MemoryItem);
+          });
+          fetchedItems.sort((a, b) => parseInt(a.number) - parseInt(b.number));
+          setItems(fetchedItems);
+        }
+        setIsLoaded(true);
+      })
+      .catch((err) => {
+        console.error("Lỗi lấy dữ liệu Firestore:", err);
+        // Fallback: Mất mạng hoặc rules lỗi
         setItems(DEFAULT_DATA);
-        localStorage.setItem('memory_items', JSON.stringify(DEFAULT_DATA));
-      } else {
-        setItems(currentItems);
-      }
-      setIsLoaded(true);
-    }, 0);
+        setIsLoaded(true);
+      });
   }, []);
 
-  const saveItems = (newItems: MemoryItem[]) => {
-    const sortedItems = [...newItems].sort((a, b) => parseInt(a.number) - parseInt(b.number));
-    setItems(sortedItems);
-    localStorage.setItem('memory_items', JSON.stringify(sortedItems));
-  };
-
-  const addItem = (item: MemoryItem) => {
+  const addItem = async (item: MemoryItem) => {
     if (items.some(i => i.number === item.number)) {
       throw new Error('Số này đã tồn tại trong thư viện!');
     }
-    saveItems([...items, item]);
+    const docRef = doc(db, 'pao_items', item.number);
+    await setDoc(docRef, item);
+    
+    // Cập nhật local state sau khi push thành công
+    const newItems = [...items, item].sort((a, b) => parseInt(a.number) - parseInt(b.number));
+    setItems(newItems);
   };
 
-  const updateItem = (updatedItem: MemoryItem) => {
-    saveItems(items.map(i => i.id === updatedItem.id ? updatedItem : i));
+  const updateItem = async (updatedItem: MemoryItem) => {
+    const docRef = doc(db, 'pao_items', updatedItem.number);
+    await setDoc(docRef, updatedItem);
+    
+    setItems(items.map(i => i.id === updatedItem.id ? updatedItem : i));
   };
 
-  const deleteItem = (id: string) => {
-    saveItems(items.filter(i => i.id !== id));
+  const deleteItem = async (id: string) => {
+    // Vì doc ID là number (VD: "00")
+    const itemToDelete = items.find(i => i.id === id);
+    if (itemToDelete) {
+      const docRef = doc(db, 'pao_items', itemToDelete.number);
+      await deleteDoc(docRef);
+      setItems(items.filter(i => i.id !== id));
+    }
   };
 
-  return { items, isLoaded, addItem, updateItem, deleteItem };
+  const seedToFirestore = async () => {
+    const colRef = collection(db, 'pao_items');
+    for (const item of DEFAULT_DATA) {
+      const docRef = doc(colRef, item.number);
+      await setDoc(docRef, item);
+    }
+    setItems(DEFAULT_DATA);
+    alert('Đã đẩy 100 bản ghi DEFAULT_DATA lên Firestore thành công!');
+  };
+
+  return { items, isLoaded, addItem, updateItem, deleteItem, seedToFirestore };
 }
