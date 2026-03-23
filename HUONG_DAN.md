@@ -142,6 +142,17 @@ APP-LIKE UX
 - Không có horizontal scroll trừ khi là carousel có chủ đích
 - Card/item list full-width trên mobile, padding trong 16px
 - Image dùng width: 100%, height: auto
+Thêm các cấu hình vào `.env.local`
+
+DỮ LIỆU THƯ VIỆN PAO (Firestore)
+- Dữ liệu 100 thẻ kỹ năng PAO (`pao_items`) hiện được lưu trực tiếp trên Firebase Firestore để dễ chỉnh sửa trực tuyến.
+- **Cách hoạt động**:
+  + Chỉnh sửa/thêm/xóa thẻ trên giao diện web bằng tài khoản Admin (`tieuhongtuyen@gmail.com`), web sẽ kết nối và lưu trực tiếp lên cơ sở dữ liệu.
+  + Mọi người dùng / thiết bị khác sẽ nhìn thấy thay đổi ngay lập tức (không cần phải Edit code + Push GitHub + Build lại nữa).
+- **Rule bảo mật Firestore**:
+  `pao_items`: `read: true` (ai cũng xem được), `write: if request.auth.email == tieuhongtuyen...`
+- **Fallback / Mất mạng**:
+  Nếu Firebase rỗng hoặc đứt kết nối, website sẽ tự động load mảng `DEFAULT_DATA` định sẵn trong `useMemoryData.ts` để hiển thị tạm thời tránh trang rỗng.
 
 BREAKPOINT
 - Mobile-first: viết CSS cho mobile trước, 
