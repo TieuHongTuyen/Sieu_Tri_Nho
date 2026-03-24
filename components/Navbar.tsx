@@ -25,7 +25,10 @@ export default function Navbar() {
   return (
     <>
       {/* ===== TOP BAR (mobile + desktop) ===== */}
-      <nav className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50 transition-colors">
+      <nav 
+        className="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50 transition-colors"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
         <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 min-h-[2.75rem]">

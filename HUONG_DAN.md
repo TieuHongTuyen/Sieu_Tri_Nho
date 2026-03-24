@@ -186,4 +186,18 @@ CARD / THẺ NHỚ (áp dụng cho library và practice)
 
 Sau khi refactor, hãy cập nhật ngắn gọn những gì đã thay đổi ở đây. Đừng chỉnh logic nếu không cần thiết.
 
+9. **Phiên bản Android (APK) — Capacitor**
+   - Dự án Android chạy song song với ứng dụng web, **dùng chung tất cả kết nối** (Firebase Auth, Firestore, Môi trường).
+   - Mã nguồn Android được tạo ra bằng **Capacitor**, bọc 100% mã nguồn web Next.js thành file `.apk`.
+   - ⚠️ **Lưu ý Git**: Thư mục `/android/` **KHÔNG** được push lên GitHub (nhằm tiết kiệm dung lượng do được định nghĩa trong `.gitignore`). Repo này chỉ giữ mã nguồn web. File cấu hình duy nhất được push là `capacitor.config.ts`.
+   - **Quy trình đồng bộ khi có thay đổi trên web**:
+     ```bash
+     npm run build          # Build web tĩnh ra out/
+     npx cap copy android   # Copy out/ vào Android project
+     npx cap open android   # Mở Android Studio build APK (nếu cần update native plugin thì chạy thêm npx cap sync android)
+     ```
+   - Xem kế hoạch chi tiết tại: **[ANDROID_PLAN.md](./ANDROID_PLAN.md)**
+
+---
+
 🎊 Chúc bạn phát triển dự án "Siêu Trí Nhớ" ngày càng tốt hơn!

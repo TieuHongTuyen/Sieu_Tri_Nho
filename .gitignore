@@ -19,3 +19,8 @@ pao_data.json
 
 # PAO source docs (not needed in web build)
 PAO_*.md
+
+# Android
+android/
+*.jks
+*.keystore
