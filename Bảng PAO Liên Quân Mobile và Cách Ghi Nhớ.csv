@@ -1,0 +1,101 @@
+Số,Tướng (Person),Hành động (Action),Vật thể (Object),Lý do hình dạng (Shape Logic)
+0,Grakk,Hút (chiêu cuối),Cái bụng béo,Hai số 0 giống như hai mắt to tròn hoặc bụng Grakk.
+1,Mganga,Quăng độc,Trượng đầu lâu,"Số 0 là mặt nạ, số 1 là cây trượng dài."
+2,Alice,Thả vòng choáng,Trượng cổ cong,Dáng người nhỏ (0) và gậy cong (2).
+3,Krixi,Tung cánh,Đôi cánh bướm,Đôi cánh bướm nhìn nghiêng rất giống số 3.
+4,Thane,Đâm kiếm,Khiên khổng lồ,Số 4 có góc nhọn giống khiên chắn vuông vức.
+5,Mina,Xoay lưỡi hái,Lưỡi hái,Lưỡi hái có độ cong như móc dưới của số 5.
+6,Zip,Hút đồng đội,Bụng phồng to,Số 6 có phần bụng tròn giống Zip lúc đang hút.
+7,Nakroth,Lướt (múa đao),Song đao,Đao của Nakroth góc cạnh sắc lẹm như số 7.
+8,Kriknak,Nhảy vồ,Cánh bọ cứng,Thân và cánh chéo nhau tạo hình số 8.
+9,Wisp,Bắn pháo,Robot tròn,Buồng lái tròn (0) và chân máy (9).
+10,Valhein,Phi tiêu choáng,Súng 6 nòng,"Số 1 là nòng súng, 0 là ổ đạn tròn."
+11,Triệu Vân,Đâm thương,Long thương,Hai số 1 giống như hai cây thương song song.
+12,Ryoma,Đâm kiếm (nhất kích),Kiếm Naginata,"Số 1 là người, số 2 là thế đứng cầm kiếm cong."
+13,Ngộ Không,Gõ gậy,Gậy Như Ý,"Số 1 là gậy dài, số 3 là vành kim cô."
+14,Florentino,Tung hoa,Kiếm mỏng,Kiếm (1) và bông hoa 4 cánh (4).
+15,Murad,Ảo ảnh trảm,Thanh kiếm cát,Kiếm (1) và đường lướt cong như móc (5).
+16,Ignis,Hỏa trận,Trượng lửa,Trượng dài (1) và ngọn lửa cuộn tròn (6).
+17,Airi,Phi Long Kiếm,Long kiếm,Kiếm (1) và tư thế ném Shuriken góc cạnh (7).
+18,Tulen,Lôi điểu,Luồng sét,Số 8 giống biểu tượng vô cực của sấm sét.
+19,Slimz,Lao cơ khí,Mũi lao vút,Lao thẳng (1) và tai thỏ tròn (9).
+20,Lauriel,Vỗ cánh,Cánh thiên sứ,"Số 2 uốn lượn như cánh, 0 là vòng sáng."
+21,Veera,Hôn gió,Trái tim tình ái,Đường cong cánh (2) và đuôi nhọn (1).
+22,Helen,Bơm máu,Cây đàn hạc,Hai số 2 giống như hai viền của cây đàn hạc.
+23,Tel'Annas,Bắn tên,Cung tên,"Số 2 là cung, số 3 là các mũi tên đang bay."
+24,Ilumia,Thả thiên thạch,Quyền trượng,Váy dài (2) và quyền trượng có đỉnh nhọn (4).
+25,Marja,Triệu hồi oán hồn,Đuôi rắn,Thân nửa người nửa rắn cuộn như số 2 và 5.
+26,Kahlii,Đổ quân oán,Sáu cánh tay,Các cánh tay uốn lượn giống số 2 và 6.
+27,Natalya,Bắn tia sáng,Quả cầu năng lượng,"Số 2 là tay, số 7 là tia sáng bắn thẳng."
+28,Điêu Thuyền,Đóng băng,Hoa tuyết,Váy xòe (2) và quả cầu băng tròn đôi (8).
+29,Liliana,Biến hình cáo,Linh hồ,Đuôi cáo uốn lượn rất giống số 2 và 9.
+30,Yue,Cắt quạt,Quạt lông vũ,Quạt xòe (3) và vòng trung tâm (0).
+31,Dirak,Dựng khiên,Pháo tử quang,Khiên sóng (3) và luồng pháo thẳng (1).
+32,Annette,Gió nồm,Cây gậy gió,Sóng gió (3) và gậy cong (2).
+33,Sephera,Đàn nước,Đàn tỳ bà,Những gợn sóng nước uốn lượn như hai số 3.
+34,Rouie,Mở cổng dịch chuyển,Vòng ma pháp,Cổng dịch chuyển có các ký tự góc cạnh (3-4).
+35,Teeri,Ném song luân,Cặp luân hồi,Hai vòng tròn răng cưa móc như 3 và 5.
+36,Bonnie,Ném thỏ,Nam châm thỏ,Tai thỏ (3) và người thỏ tròn (6).
+37,Ishar,Gọi Tí Nị,Thú bông,Tai thú (3) và chân đá thẳng (7).
+38,Aya,Nhập hồn,Bong bóng nhạc,Tai mèo (3) và nốt nhạc tròn đôi (8).
+39,Tachi,Khai mở phong ấn,Kiếm Katana,Sóng kiếm (3) và bao kiếm dài (9).
+40,Maloch,Luyện ngục,Kiếm quỷ,Cánh vuông (4) và vùng ảnh hưởng tròn (0).
+41,Omen,Xích tử vong,Roi xích,Kiếm thẳng (1) và lồng nhốt hình vuông (4).
+42,Lữ Bố,Chiến thần,Phương thiên họa kích,Kích nhọn (4) và dáng đứng oai vệ (2).
+43,Arthur,Gầm thét,Kiếm thánh,Khiên vuông (4) và hào quang quanh người (3).
+44,Superman,Bay lượn,Áo choàng đỏ,Hai góc vai vuông vức tạo hình số 44.
+45,Batman,Phóng phi tiêu,Bat-boomerang,Cánh tay vuông (4) và móc leo trèo (5).
+46,Joker,Cười điên dại,Súng bazooka,Vai áo nhọn (4) và khẩu súng tròn (6).
+47,The Flash,Chạy thần tốc,Luồng điện,Góc chạy nghiêng (4) và tia chớp (7).
+48,Baldum,Địa chấn,Cột đá,Cột đá vuông (4) và vết nứt số 8.
+49,Arduin,Hồn tử sĩ,Rìu khổng lồ,Rìu góc cạnh (4) và đầu lâu (9).
+50,Arum,Triệu hồi thú,Thú linh,Vòng tròn thú (0) và dáng người đứng (5).
+51,Gildur,Vàng thử lửa,Găng tay vàng,Tay đấm thẳng (1) và tư thế gồng (5).
+52,Cresht,Biến thân,Gậy thủy thần,Gậy cong (2) và sừng quái vật (5).
+53,Kil'Groth,Mâu thuẫn,Mâu biển sâu,Mũi mâu nhọn (3) và cán cong (5).
+54,Taara,Đập búa,Búa tạ,Cán búa thẳng nhọn (4) và đầu búa (5).
+55,D'Arcy,Ma trận thứ nguyên,Lập phương,Hai đường liên kết ma trận uốn như số 55.
+56,Xeniel,Sứ mệnh cứu thế,Sách thánh,Sách mở ra (5) và vòng sáng dưới chân (6).
+57,Skud,Đấm phát chết luôn,Găng tay cơ khí,Tư thế gồng tay rất giống số 5 và 7.
+58,Roxie,Trượt patin,Đèn dầu,Dây kéo (5) và bánh xe tròn đôi (8).
+59,Astrid,Cự kiếm,Kiếm khổng lồ,Kiếm dài (9) và dáng vung kiếm (5).
+60,TeeMee,Đánh rắm,Nồi thuốc,Cái nồi tròn (0) và tay cầm (6).
+61,Omega,Chế độ hủy diệt,Cánh tay máy,Thân robot tròn (6) và trục thẳng (1).
+62,Lumburr,Đất nứt,Vai đá,Thân đá tròn (6) và tay dài (2).
+63,Toro,Húc sừng,Sừng trâu,Sừng uốn (3) và thân hình vạm vỡ (6).
+64,Chaugnar,Sóng triều,Vòi voi,Vòi voi cuộn (6) và tai to (4).
+65,Y'bneth,Vỗ tay,Cành cây,Thân cây tròn (6) và cành móc (5).
+66,Ormarr,Hiên ngang,Búa chiến,Thân người bụng phệ (6) và búa tròn (6).
+67,Ata,Thuyền trưởng,Neo thuyền,Neo cong (6) và móc nhọn (7).
+68,Wiro,Nện rìu,Rìu thần,Thân lực lưỡng (6) và mắt thần (8).
+69,Yorn,Tên thần,Cung vàng,Bụng tên tròn (6) và cung dài (9).
+70,Butterfly,Ám sát,Đoản kiếm,Kiếm nhọn (7) và vòng tròn hạ gục (0).
+71,Yan,Hoạ long,Bút vẽ kiếm,Bút lông (1) và những nét vẽ sắc (7).
+72,Quillen,Chém lén,Đoản đao,Tư thế khom người (2) và dao găm (7).
+73,Enzo,Truy bức,Xích liềm,Lưỡi liềm (7) và xích uốn (3).
+74,Veres,Xích ra,Sợi xích gai,Xích góc cạnh tạo thành hình 7 và 4.
+75,Amily,Liên hoàn cước,Đôi chân,Chân đá tạo thành góc chữ L (7) và (5).
+76,Tachi,Long phá,Kiếm mộc,Kiếm gỗ (7) và bao tròn (6).
+77,Zuka,Nhảy dậm,Gậy tre,Hai thanh tre đan chéo như số 77.
+78,Qi,Đấm vỡ tường,Hào quang tay,Tay đấm (7) và ngực áo (8).
+79,Sinestrea,Đổi máu,Kiếm máu,Kiếm sắc (7) và giọt máu tròn (9).
+80,Zata,Bay lên,Lông vũ,Cánh vỗ (8) và vòng lốc xoáy (0).
+81,Paine,Di hồn,Lưỡi hái hồn,Luồng hồn ma (8) và cán dài (1).
+82,Keera,Đi xuyên tường,Tam giác ma thuật,Đôi tai mèo (8) và dáng chạy (2).
+83,Zill,Phong đao,Cơn lốc,Vòng xoáy gió giống số 8 và 3.
+84,Volkath,Cưỡi ngựa,Đại đao,Giáp vai (8) và đao góc cạnh (4).
+85,Lorion,Khống chế hắc ám,Cầu hắc ám,Chuỗi hạt bay (8) và tay móc (5).
+86,Bright,Tốc độ ánh sáng,Thánh kiếm,Vòng sáng (8) và chuôi kiếm tròn (6).
+87,Iggy,Hỏa cầu,Quả bom lửa,Mắt (8) và tia lửa bắn (7).
+88,Allain,Kiếm tất sát,Song kiếm,Hai thanh kiếm chéo nhau tạo hình số 88.
+89,Thorne,Nạp đạn,Ma súng,Ổ đạn tròn (8) và nòng súng (9).
+90,Moren,Bắn liên thanh,Súng cối,Đầu súng to (9) và ổ đạn (0).
+91,Fennik,Ném kíp nổ,Ná cao su,Ná tròn (9) và dây ná (1).
+92,Lindis,Đặt bẫy,Cung mặt trăng,Vòng cung tròn (9) và dáng chạy lướt (2).
+93,Violet,Lộn bắn,Súng đôi,Đầu súng (9) và làn đạn bay (3).
+94,Elsu,Viễn trình kích,Súng bắn tỉa,Ống ngắm (9) và chân chống súng (4).
+95,Kaine,Tàng hình,Dao găm,Đầu dao (9) và tay móc (5).
+96,Laville,Đạn lạc,Song súng,Hai nòng súng tròn đầu giống 9 và 6.
+97,Hayate,Phi tiêu,Shuriken,Tiêu tròn (9) và đường phi thẳng (7).
+98,Eland'orr,Thả bướm,Đèn lồng,Đèn lồng tròn (9) và bướm đôi (8).
+99,Brunhilda,Pháo đài,Đại bác,Hai nòng pháo khổng lồ giống hệt số 99.
