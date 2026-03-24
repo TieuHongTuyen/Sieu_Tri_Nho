@@ -56,6 +56,11 @@ git push
 
 - Nhập tài khoản/mật khẩu GitHub (nếu được yêu cầu) hoặc để nó tự động dùng Token máy bạn hiện có.
 - Sau khi có thông báo thành công. Mở kho lưu trữ GitHub lên sẽ thấy code mới. Cùng lúc đó Cloudflare Pages sẽ tự động kích hoạt tiến trình cập nhật web thực tế. Thường chỉ mất 1-2 phút là trang web online của bạn sẽ được làm mới!
+- 📱 **ĐỐI VỚI ANDROID (APK):** Web (Cloudflare) tự động tải lại giao diện hay hình ảnh mới, còn điện thoại thì KHÔNG! Lần nào phát hành phiên bản hoặc thêm ảnh thì bạn **bắt buộc chạy lệnh sao chép cục bộ** để gắn mã nguồn mới sang hệ thống Android:
+  ```bash
+  npx cap copy android
+  ```
+  Sau đó xuất lại file apk (với lệnh bổ trợ `npx cap open android`).
 
 ---
 
